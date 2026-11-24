@@ -14,6 +14,8 @@
 
 #![forbid(unsafe_code)]
 
+mod digest;
+
 pub mod cob;
 pub mod gaf;
 pub mod tdf;

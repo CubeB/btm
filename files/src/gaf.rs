@@ -31,7 +31,6 @@
 //!   the recursive index pass cannot exhaust the stack.
 
 mod metadata;
-pub(crate) mod sha256;
 mod source;
 mod variant;
 

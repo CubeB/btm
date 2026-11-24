@@ -310,7 +310,7 @@ fn load_preserves_authored_primitive_order_and_selection() {
     let data = encode_three_do(&m).unwrap();
     let got = ThreeDo::parse(&data).unwrap();
     assert_eq!(got.raw, data);
-    assert_eq!(got.content_hash, crate::gaf::sha256::sha256(&data));
+    assert_eq!(got.content_hash, crate::digest::sha256(&data));
     let object = &got.objects[0];
     assert_eq!(object.selection, 1);
     assert_eq!(object.primitives.len(), 2);

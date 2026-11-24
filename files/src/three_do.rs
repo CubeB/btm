@@ -18,8 +18,7 @@
 //!   child links loop. [`ThreeDo::model_top`] is iterative and visits each piece at
 //!   most once, so it always terminates. Parsed models are trees, so results agree.
 //! - Names are byte strings (Go strings are bytes), not forced to UTF-8.
-//! - `ContentHash` is SHA-256 from the safe implementation in `gaf::sha256`, since the
-//!   crate has no hash dependency.
+//! - `ContentHash` is SHA-256 from the `sha2` crate, via `crate::digest`.
 
 #[cfg(test)]
 mod tests;
@@ -29,7 +28,7 @@ mod write;
 use std::collections::HashSet;
 use std::fmt;
 
-use crate::gaf::sha256::sha256;
+use crate::digest::sha256;
 
 /// Bounds on the object, vertex and primitive counts one model may declare. A zero
 /// field is invalid.

@@ -12,8 +12,8 @@ use std::mem::size_of;
 use std::sync::Arc;
 
 use super::metadata::materialize_frame;
-use super::sha256::sha256;
 use super::{GafError, GafFrame, GafLimits, GafMetadata, GafMetadataFrame};
+use crate::digest::sha256;
 
 /// A validated encoded bank for on-demand presentation. Metadata and returned
 /// frames are immutable. Unlike [`Gaf::parse`](super::Gaf::parse), retaining a
