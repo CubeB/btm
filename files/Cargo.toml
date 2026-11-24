@@ -1,0 +1,18 @@
+[package]
+name = "btm-files"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Total Annihilation 3.1c data loading: HPI archives, the file namespace, and TDF/FBI, COB, GAF and 3DO parsers. Ported from Nanolathe."
+
+[dependencies]
+miniz_oxide = "0.8"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+indexing_slicing = "warn"
