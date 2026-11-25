@@ -295,6 +295,16 @@ pub struct Document {
     root: Section,
 }
 
+/// The empty document: a root with no items. Added for [`crate::gui`], which gives a
+/// binary panel an empty tree rather than none.
+impl Default for Document {
+    fn default() -> Self {
+        Document {
+            root: Section::default(),
+        }
+    }
+}
+
 impl Document {
     /// Parse under the default limits.
     pub fn parse(data: &[u8]) -> Result<Document, Error> {

@@ -8,6 +8,13 @@
 //! - [`cob`]: COB script files (the file, not the VM).
 //! - [`gaf`]: GAF image archives.
 //! - [`three_do`]: 3DO models.
+//! - [`tnt`]: TNT terrain (tiles, height and feature grid, minimap).
+//! - [`ota`]: OTA map and mission descriptions (TDF with a `GlobalHeader`).
+//! - [`pcx`]: PCX images.
+//! - [`pal`]: PAL palettes.
+//! - [`fnt`]: FNT bitmap fonts.
+//! - [`gui`]: GUI panel definitions (TDF gadgets, and binary panels).
+//! - [`wav`]: WAV sound metadata (RIFF, DIGI and raw).
 //!
 //! The parsers take bytes and never touch the file system. Nothing here panics on bad
 //! input, and no allocation is larger than the input allows.
@@ -18,9 +25,17 @@
 #![warn(clippy::indexing_slicing)]
 
 mod digest;
+mod le;
 
 pub mod cob;
+pub mod fnt;
 pub mod gaf;
+pub mod gui;
+pub mod ota;
+pub mod pal;
+pub mod pcx;
 pub mod tdf;
 pub mod three_do;
+pub mod tnt;
 pub mod vfs;
+pub mod wav;
