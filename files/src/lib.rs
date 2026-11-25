@@ -13,6 +13,9 @@
 //! input, and no allocation is larger than the input allows.
 
 #![forbid(unsafe_code)]
+// Bad input must never panic: these hold outside tests.
+#![deny(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
+#![warn(clippy::indexing_slicing)]
 
 mod digest;
 
